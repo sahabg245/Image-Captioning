@@ -4,6 +4,16 @@ import torch.nn as nn
 from torchvision import models, transforms
 from PIL import Image
 import pickle
+import gdown
+import os
+
+
+
+if not os.path.exists('best_model.pth'):
+    file_id = "1XBwXqqN6gml90jtNpGQH7KvgzTPURa5s"  # ← Put your FILE_ID here
+    url = f"https://drive.google.com/uc?id={file_id}"
+    gdown.download(url, 'best_model.pth', quiet=False)
+
 
 st.set_page_config(page_title="Neural Storyteller", page_icon="🖼️", layout="wide")
 
